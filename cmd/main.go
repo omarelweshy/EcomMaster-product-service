@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
+	"github.com/omarelweshy/EcomMaster-product-service/internal/logger"
 	"github.com/omarelweshy/EcomMaster-product-service/internal/model"
 	"github.com/omarelweshy/EcomMaster-product-service/internal/router"
 	"gorm.io/driver/postgres"
@@ -28,7 +29,7 @@ func main() {
 	}
 
 	port := os.Getenv("PORT")
-	// logger.InitLogger()
+	logger.InitLogger()
 
 	db, err := setupDB()
 	if err != nil {
